@@ -17,4 +17,4 @@ or
 npm run dev:server
 ```
 ------
-Server runs on `localhost:300`
+Server runs on `localhost:3000`
