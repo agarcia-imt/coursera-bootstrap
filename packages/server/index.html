@@ -50,9 +50,61 @@
               </a>
             </li>
           </ul>
+          <!-- Trigger Login Modal -->
+          <span class="navbar-text">
+            <a data-toggle="modal" data-target="#loginModal">
+              <span class="fa fa-sign-in"></span> Login
+            </a>
+          </span>
         </div>
       </div>
     </nav>
+
+    <!-- modal -->
+    <div id="loginModal" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" role="content">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Login</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-row"> <!--form-row de inputs-->
+                <div class="form-group col-sm-4">
+                  <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                  <input 
+                    id="exampleInputEmail3"
+                    type="email"
+                    class="form-control form-control-sm mr-1"
+                    placeholder="Enter email"
+                  >
+                </div>
+                <div class="form-group col-sm-4">
+                  <label class="sr-only" for="exampleInputPassword3">Password</label>
+                  <input
+                    id="exampleInputPassword3"
+                    type="password"
+                    class="form-control form-control-sm mr-1"
+                    placeholder="Password"
+                  >
+                </div>
+                <div class="col-sm-auto">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input">
+                    <label class="form-check-label">Rememeber me</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row"> <!--form-row de bottons-->
+                <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <header class="jumbotron">
         <div class="container">
@@ -61,12 +113,22 @@
                     <h1>Ristorante con Fusion</h1>
                     <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
                 </div>
-                <div class="col-12 col-sm-6 align-items-center row">
+                <div class="col-12 col-sm align-items-center row">
                   <div class="col-12 col-sm-6">
                     <img src="img/logo.png" class="img-fluid" />
                   </div>
                   <div class="col-12 col-sm-6">
-                    <a href="#reserveTable" role="button" class="btn btn-block btn-warning btn-sm">Reserve Table</a>
+                    <a
+                      href="#reserveTable" 
+                      role="button" 
+                      class="btn btn-block btn-warning btn-sm"
+                      data-toggle="tooltip"
+                      data-html="true"
+                      title="Or Call us at <br><strong>+852 12345678</strong>"
+                      data-placement="bottom"
+                    >
+                      Reserve Table
+                    </a>
                   </div>
                 </div>
             </div>
@@ -269,6 +331,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <script>
+      // wherever theres an attribute tooltip, turn it on
+      $(document).ready(() => {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
 </body>
 
 </html>
