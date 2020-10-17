@@ -60,7 +60,7 @@
       </div>
     </nav>
 
-    <!-- modal -->
+    <!-- login modal -->
     <div id="loginModal" class="modal fade" role="dialog">
       <div class="modal-dialog modal-lg" role="content">
         <div class="modal-content">
@@ -106,6 +106,94 @@
       </div>
     </div>
 
+    <!-- reserve modal -->
+    <div id="reserveModal" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" role="content">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Reserve a Table</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form id="reserveTable">
+              <div class="form-group row">
+                <label for="guestsNumber" class="col-12 col-sm-2 col-form-label">Number of Guests</label>
+                <div class="col-12 col-sm-10">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="guestsNumber" id="guestsNumber_1" value="1">
+                    <label class="form-check-label" for="guestsNumber_1">1</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="guestsNumber" id="guestsNumber_2" value="2">
+                    <label class="form-check-label" for="guestsNumber_2">2</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="guestsNumber" id="guestsNumber_3" value="3">
+                    <label class="form-check-label" for="guestsNumber_3">3</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="guestsNumber" id="guestsNumber_4" value="4">
+                    <label class="form-check-label" for="guestsNumber_4">4</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="guestsNumber" id="guestsNumber_5" value="5">
+                    <label class="form-check-label" for="guestsNumber_5">5</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="guestsNumber" id="guestsNumber_6" value="6">
+                    <label class="form-check-label" for="guestsNumber_6">6</label>
+                  </div>
+                </div>
+              </div>
+              <!-- Radio buttons -->
+              <div class="form-group row">
+                <label for="section" class="col-12 col-sm-2 col-form-label">Section</label>
+                <div class="col-12 col-sm-10">
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-success active">
+                      <input type="radio" name="section" id="section1" autocomplete="off" checked>Non-Smoking
+                    </label>
+                    <label class="btn btn-danger">
+                      <input type="radio" name="section" id="seciton2" autocomplete="off">Smoking
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="date" class="col-12 col-sm-2 col-form-label">Date and Time</label>
+                <div class="col-12 col-sm-3">
+                  <input 
+                  type="text"
+                  name="date"
+                  id="date"
+                  class="form-control"
+                  placeholder="Date"
+                  onfocus="(this.type='date')"
+                  onblur="(this.type='text')">
+                </div>
+                <div class="col-12 col-sm-3">
+                  <input 
+                  type="text"
+                  name="time"
+                  id="time"
+                  class="form-control"
+                  placeholder="Time"
+                  onfocus="(this.type='time')"
+                  onblur="(this.type='text')">
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="offset-sm-2 col-sm-10 ">
+                  <button type="button" class="btn btn-secondary ml-auto" data-dismiss="modal">Cancel</button>
+                  <button type="submit" class="btn btn-primary">Reserve</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header">
@@ -118,14 +206,12 @@
                     <img src="img/logo.png" class="img-fluid" />
                   </div>
                   <div class="col-12 col-sm-6">
+                    <!-- Trigger Reserve Modal -->
                     <a
-                      href="#reserveTable" 
                       role="button" 
                       class="btn btn-block btn-warning btn-sm"
-                      data-toggle="tooltip"
-                      data-html="true"
-                      title="Or Call us at <br><strong>+852 12345678</strong>"
-                      data-placement="bottom"
+                      data-toggle="modal"
+                      data-target="#reserveModal"
                     >
                       Reserve Table
                     </a>
@@ -140,6 +226,7 @@
         <div class="col">
 
           <div id="mycarousel" class="carousel slide" data-ride="carousel">
+            <!-- Contenido del carousel -->
             <div class="carousel-inner" role="listbox">
               <div class="carousel-item active">
                 <img
@@ -183,6 +270,7 @@
                 </div>
               </div>
             </div>
+            <!-- Controles del carousel -->
             <ol class="carousel-indicators">
               <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
               <li data-target="#mycarousel" data-slide-to="1"></li>
@@ -265,74 +353,7 @@
         </div>
     </div>
 
-    <div class="row row-content align-items-center justify-content-center">
-      <div class="col-12 col-sm-8">
-        <div class="card">
-          <h3 class="card-header bg-warning text-white">Reserve a Table</h3>
-          <div class="card-body">
-            <form id="reserveTable">
-              <div class="form-group row">
-                <label for="guestsNumber" class="col-12 col-sm-2 col-form-label">Number of Guests</label>
-                <div class="col-12 col-sm-10">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="guestsNumber" id="guestsNumber_1" value="1">
-                    <label class="form-check-label" for="guestsNumber_1">1</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="guestsNumber" id="guestsNumber_2" value="2">
-                    <label class="form-check-label" for="guestsNumber_2">2</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="guestsNumber" id="guestsNumber_3" value="3">
-                    <label class="form-check-label" for="guestsNumber_3">3</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="guestsNumber" id="guestsNumber_4" value="4">
-                    <label class="form-check-label" for="guestsNumber_4">4</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="guestsNumber" id="guestsNumber_5" value="5">
-                    <label class="form-check-label" for="guestsNumber_5">5</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="guestsNumber" id="guestsNumber_6" value="6">
-                    <label class="form-check-label" for="guestsNumber_6">6</label>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group row">
-                <label for="date" class="col-12 col-sm-2 col-form-label">Date and Time</label>
-                <div class="col-12 col-sm-3">
-                  <input 
-                  type="text"
-                  name="date"
-                  id="date"
-                  class="form-control"
-                  placeholder="Date"
-                  onfocus="(this.type='date')"
-                  onblur="(this.type='text')">
-                </div>
-                <div class="col-12 col-sm-3">
-                  <input 
-                  type="text"
-                  name="time"
-                  id="time"
-                  class="form-control"
-                  placeholder="Time"
-                  onfocus="(this.type='time')"
-                  onblur="(this.type='text')">
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="offset-sm-2 col-sm-10 ">
-                  <button type="submit" class="btn btn-primary">Reserve</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+
 
     <footer class="footer">
         <div class="container">
@@ -394,12 +415,6 @@
     
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     
-    <script>
-      // wherever theres an attribute tooltip, turn it on
-      $(document).ready(() => {
-        $('[data-toggle="tooltip"]').tooltip();
-      });
-    </script>
 </body>
 
 </html>
