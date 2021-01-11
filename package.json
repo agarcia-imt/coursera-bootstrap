@@ -11,10 +11,14 @@
     "dev": "run-p server:dev client:dev"
   },
   "workspaces": {
-    "packages": ["packages/*"],
+    "packages": [
+      "packages/*"
+    ],
     "nohoist": [
       "**/font-awesome",
-      "**/bootstrap-social"
+      "**/bootstrap-social",
+      "**/less",
+      "**/less/**"
     ]
   },
   "dependencies": {

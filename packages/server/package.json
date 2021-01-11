@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "lite-server": "^2.5.4",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "less": "^4.1.0"
   }
 }
