@@ -51,8 +51,9 @@
             </li>
           </ul>
           <!-- Trigger Login Modal -->
+          <!-- data-toggle="modal" data-target="#loginModal" -->
           <span class="navbar-text">
-            <a data-toggle="modal" data-target="#loginModal">
+            <a id='triggerLogin'>
               <span class="fa fa-sign-in"></span> Login
             </a>
           </span>
@@ -207,11 +208,12 @@
                   </div>
                   <div class="col-12 col-sm-6">
                     <!-- Trigger Reserve Modal -->
+                    <!-- data-toggle="modal"
+                    data-target="#reserveModal" -->
                     <a
+                      id="triggerReserve"
                       role="button" 
                       class="btn btn-block btn-warning btn-sm"
-                      data-toggle="modal"
-                      data-target="#reserveModal"
                     >
                       Reserve Table
                     </a>
@@ -431,6 +433,17 @@
             $('#carouselButton').children('span').addClass('fa-pause');
           }
         });
+
+        // Login
+        $('#triggerLogin').click(() => {
+          $('#loginModal').modal('toggle');
+        });
+
+        // Reserve Table
+        $('#triggerReserve').click(() => {
+          $('#reserveModal').modal('toggle');
+        });
+
       });
     </script>
     

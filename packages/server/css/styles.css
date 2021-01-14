@@ -9,7 +9,9 @@
   min-height: 400px; }
 
 .footer {
-  background-color: #D1C4E9; }
+  background-color: #D1C4E9;
+  margin: 0px auto;
+  padding: 20px 0px; }
 
 .jumbotron {
   margin: 0px auto;
@@ -50,3 +52,15 @@ body {
   right: 0px;
   bottom: 0px;
   z-index: 1; }
+
+.modal-header {
+  background: #512DA8;
+  color: floralwhite; }
+  .modal-header button {
+    color: floralwhite; }
+
+.modal-body {
+  background: #D1C4E9; }
+
+nav span.navbar-text:hover {
+  cursor: pointer; }
