@@ -5,8 +5,11 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "lite-server",
-    "scss": "node-sass -o css/ css/"
+    "start": "yarn watch:all",
+    "lite": "lite-server",
+    "scss": "node-sass -o css/ css/",
+    "watch:scss": "onchange 'css/*.scss' -- yarn scss",
+    "watch:all": "run-p lite watch:scss"
   },
   "workspaces": {},
   "dependencies": {
@@ -20,6 +23,7 @@
     "less": "^4.1.0",
     "lite-server": "^2.5.4",
     "node-sass": "^5.0.0",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "onchange": "3.3.0"
   }
 }
