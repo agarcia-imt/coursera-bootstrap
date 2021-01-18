@@ -17,6 +17,9 @@
     "nohoist": [
       "**/font-awesome",
       "**/bootstrap-social",
+      "**/bootstrap",
+      "**/jquery",
+      "**/popper.js",
       "**/less",
       "**/less/**"
     ]
